@@ -1,13 +1,18 @@
 1) Description of Project:
 
-The overall idea of the project is that there is a rock climbing wall with many rock climbing holds. There is a character in the simulation that a player controls. The player's objective is to get the character from the bottom of a rock climbing wall to the top of the rock climbing wall. They use the computer keys to move the character up, but as the character continues to move, it loses energy, so the player has to find rests in the game for the character to regenerate its power. If the character loses all of its energy before it reaches the top, the game is over.
+  The overall idea of the project is that there is a rock climbing wall with many rock climbing holds. There is a character in the simulation     that a player controls. The player's objective is to get the character from the bottom of a rock climbing wall to the top of the rock           climbing wall. They use the computer keys to move the character up, but as the character continues to move, it loses energy, so the player      has to find rests in the game for the character to regenerate its power. If the character loses all of its energy before it reaches the top,    the game is over.
 
-2) Functions Used:
+2) Functions Used: There are quite a bit of functions that will be used in the process of creating this game.
 
-a) While Loop Function (while running:) - This function will be used to keep the code running.
+  a) def move_player: This function would allow the player to move around the rock climbing wall and on to the rock climbing holds if available.
 
-b) For Loop Function (ex. for i in range(1 , 5):) - This function will allow me to load all of the animated images that I want to use for my simulation/game at once. I can also use a for loop to put all of the rocks in their particular spot in the simulation/game.
+  b) def get_energy: This function would be responsible for the energy that the player will recieve and the energy that the play might lose.      This is the stepping stone for winning and losing the game.
 
-c) Print Function - I can use this function to print the instructions of the game before the player begins. It will describe what the player needs to do to win and can provide text throughout the game to encourage the players.
+  c) def check_game_over: This function is the overall ending of the game if the charachter dies. This code will check to see if the player has   run out of energy and, if so, the game is over.
 
-------- I will be working solo for this project -------
+3) This game does not take any inputted data, other than pressing keys to move the character. The code would take into account which keys would correlate to moving the character left, right, up, and down but there is no types data fromt he player.
+
+4) Program Use:
+   
+  This program would generally be used for fun! By taking a character and being able to move it left, right, up, and down for a possibility of    winning, the player can create a fun time on their own or with friends. It is an easy way to pass the time quickly without the effort of        doing a task with much work.
+
