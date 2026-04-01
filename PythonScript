@@ -1,0 +1,10 @@
+Some of the main functions that will be used to create this project are:
+
+def move_player: This function would allow the player to move around the rock climbing wall and on to the rock climbing holds if available.
+
+def get_energy: This function would be responsible for the energy that the player will recieve and the energy that the play might lose. This is the stepping stone for winning and losing the game.
+
+
+
+def check_game_over: This function is the overall ending of the game if the charachter dies. This code will check to see if the player has run out of energy and, if so, the game is over.
+
