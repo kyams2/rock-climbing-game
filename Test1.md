@@ -1,5 +1,5 @@
 """
-UNIT TEST 1 NARRATIVE OF CURRENT CODE
+UNIT TEST 1 NARRATIVE OF CURRENT CODE (NO INPUT DATA)
 
 Currently, have completed the coding for the first class out of three. This is the Player class.
 This class has two functions with it (excluding def __init__):
