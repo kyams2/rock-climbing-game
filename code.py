@@ -1,21 +1,32 @@
 """
-1) Description of Project:
+The classes and methods that will be used to create this project are:
 
-  The overall idea of the project is that there is a rock climbing wall with many rock climbing holds. There is a character in the simulation     that a player controls. The player's objective is to get the character from the bottom of a rock climbing wall to the top of the rock           climbing wall. They use the computer keys to move the character up, but as the character continues to move, it loses energy, so the player      has to find rests in the game for the character to regenerate its power. If the character loses all of its energy before it reaches the top,    the game is over.
+The Player class: Contains def move_player() and def get_energy()
 
-2) Functions Used: There are quite a bit of functions that will be used in the process of creating this game.
+The Wall class: def generate_wall(), def is_move_valid(), and def display_wall()
 
-  a) def move_player: This function would allow the player to move around the rock climbing wall and on to the rock climbing holds if available.
+The Game class: def key_press(), def check_win(), def check_game_over(), def game_loop()
 
-  b) def get_energy: This function would be responsible for the energy that the player will recieve and the energy that the play might lose.      This is the stepping stone for winning and losing the game.
 
-  c) def check_game_over: This function is the overall ending of the game if the charachter dies. This code will check to see if the player has   run out of energy and, if so, the game is over.
+The functions that will be used to create this project are:
 
-3) This game does not take any inputted data, other than pressing keys to move the character. The code would take into account which keys would correlate to moving the character left, right, up, and down but there is no types data fromt he player.
+def move_player(): This function would allow the player to move around the rock climbing wall and on to the rock climbing holds if available.
 
-4) Program Use:
-   
-  This program would generally be used for fun! By taking a character and being able to move it left, right, up, and down for a possibility of    winning, the player can create a fun time on their own or with friends. It is an easy way to pass the time quickly without the effort of        doing a task with much work.
+def get_energy(): This function would be responsible for the energy that the player will recieve and the energy that the play might lose. It controls how the energy cahnges each move.
+
+def generate_wall(): This function will be used tocreate the rock climbing wall and place all of the holds on to the rock climbing wall.
+
+def display_wall(): This function will show the position of the character on the wall.
+
+def key_press(): This function will process what keys need to be pressed in order to move the character.
+
+def is_move_valid(): This function will check to see if the move being conducted is allowed in the context of the game.
+
+def check_win(): This function will check to see if the play has reached the top and has won.
+
+def check_game_over(): This function is the overall ending of the game if the charachter dies. This code will check to see if the player has run out of energy and, if so, the game is over.
+
+def game_loop(): this function will control the entire game flow and call all of the function in the correct order.
 """
 
 class Player:
@@ -37,4 +48,61 @@ class Player:
             self.energy += 2 #gain energy
         else:
             self.energy -= 1 #lose energy
-            
+
+class Game:
+    def __init__(self):
+        self.wall = Wall()
+        self.player = Player(0, 0)
+    def key_press(self, key):
+        if key in ["w", "a", "s", "d"]:
+            self.player.move_player(key)
+    def check_win(self):
+        return self.player.row == self.wall.height - 1
+    def check_game_over(self):
+        return self.player.energy <= 0
+    def game_loop(self):
+        while True:
+            self.wall.display_wall(self.player)
+            key = input("Enter a move (w/a/s/d): ")
+            self.key_press(key)
+            if self.check_win():
+                print("Congratualtions! You have reached the top of the wall! You win!")
+                break
+            if self.check_game_over():
+                print("Game Over! You have run out of energy.")
+                break
+class Wall:
+    def __init__(self):
+        self.height = 10
+        self.width = 10
+        self.holds = self.generate_wall()
+    def generate_wall(self):
+        holds = []
+        for i in range(self.height):
+            row = []
+            for j in range(self.width):
+                if (i + j) % 3 == 0:
+                    row.append(True)
+                else:
+                    row.append(False)
+            holds.append(row)
+        return holds
+    def is_move_valid(self, player):
+        if 0 <= player.row < self.height and 0 <= player.column < self.width:
+            return self.holds[player.row][player.column]
+        return False
+    def display_wall(self, player):
+        for i in range(self.height):
+            row = ""
+            for j in range(self.width):
+                if player.row == i and player.column == j:
+                    row += "P "
+                elif self.holds[i][j]:
+                    row += "H "
+                else:
+                    row += ". "
+            print(row)
+
+if __name__ == "__main__":
+    game = Game()
+    game.game_loop()
