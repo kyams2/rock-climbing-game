@@ -67,7 +67,7 @@ class Game:
             key = input("Enter a move (w/a/s/d): ")
             self.key_press(key)
             if self.check_win():
-                print("Congratualtions! You have reached the top of the wall! You win!")
+                print("Congratulations! You have reached the top of the wall! You win!")
                 break
             if self.check_game_over():
                 print("Game Over! You have run out of energy.")
