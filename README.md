@@ -17,7 +17,7 @@ The Wall class: def generate_wall(), def is_move_valid(), and def display_wall()
 The Game class: def key_press(), def check_win(), def check_game_over(), def game_loop()
 
 
-## The functions that will be used to create this project are:
+## The functions (and descriptions) that will be used to create this project are:
 
 def move_player(): This function would allow the player to move around the rock climbing wall and on to the rock climbing holds if available.
 
