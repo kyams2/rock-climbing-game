@@ -41,8 +41,11 @@ def game_loop(): this function will control the entire game flow and call all of
 # Controls
 
 The "w" key moves the character up the wall.
+
 The "s" key moves the character down the wall.
+
 The "a" key moves the character to the left.
+
 The "d" key moves the character to the right. 
 
 # Notes
