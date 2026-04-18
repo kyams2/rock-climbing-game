@@ -37,6 +37,19 @@ def check_game_over(): This function is the overall ending of the game if the ch
 
 def game_loop(): this function will control the entire game flow and call all of the function in the correct order.
 
+# Demo
+When the code is run:
+
++ A grid like wall appears which is the area that the character will be climbing on.
+
++ You control the character by using the keys "w", "a", "s", "d" to move it up, left, down, and right.
+
++ As you move the character around the wall, it collects energy by resting and loses energy by moving.
+
++ You should strategically maneuver around the wall to avoid losing all of the energy.
+
++ The overall objective is to get to the top of the rock climbing wall before the character's energy has run out.
+
 
 # Controls
 
