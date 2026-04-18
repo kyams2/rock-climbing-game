@@ -50,7 +50,7 @@ The "d" key moves the character to the right.
 
 # Notes
 
-This game does not take any inputted data, other than pressing keys to move the character. The code would take into account which keys would correlate to moving the character left, right, up, and down but there is no types data fromt he player.
+This game does not take any inputted data, other than pressing keys to move the character. The code would take into account which keys would correlate to moving the character left, right, up, and down but there is no typed data from the player.
 
 
 
