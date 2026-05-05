@@ -28,6 +28,7 @@ class Game:
         self.wall.holds[0][0] = True
         self.wall.holds[0][1] = True
         self.wall.holds[1][0] = True
+        self.message = ""
     def key_press(self, key):
         if key in ["w", "a", "s", "d"]:
             old_row = self.player.row
@@ -35,51 +36,88 @@ class Game:
             self.player.move_player(key)
             if self.wall.is_move_valid(self.player):
                 self.player.get_energy(resting = False)
+                self.message = ""
             else:
-                print("Invalid move! No hold there.")
                 self.player.row = old_row
                 self.player.column = old_column
                 self.player.get_energy(resting = False)
+                self.message = "Invalid move!"
         elif key == "r":
             self.player.get_energy(resting = True)
-            print("You rest and gain energy")
+            self.message = "You rest and gain energy!"
         else:
-            print("Invalid Input. Please enter w/a/s/d to move or r to rest.")
+            self.message = "Invalid input."
 
     def check_win(self):
         return self.player.row == self.wall.height - 1
     def check_game_over(self):
         return self.player.energy <= 0
     def game_loop(self):
-        try:
+        def main(stdscr):
+            curses.curs_set(0)
+            stdscr.nodelay(False)
             while True:
-                self.wall.display_wall(self.player)
-                print(f"Energy: {self.player.energy}")
-                key = input("Enter a move (w/a/s/d) or r to rest:")
-                self.key_press(key)
+                stdscr.clear()
+                for i in range(self.wall.height):
+                    row = ""
+                    for j in range(self.wall.width):
+                        if self.player.row == i and self.player.column == j:
+                            row += "P "
+                        elif self.wall.holds[i][j]:
+                            row += "H "
+                        else:
+                            row += ". "
+                    stdscr.addstr(i, 0, row)
+                stdscr.addstr(self.wall.height + 1, 0, f"Energy: {self.player.energy}")
+                stdscr.addstr(self.wall.height + 2, 0, self.message)
+                stdscr.refresh()
+
+                key = stdscr.getch()
+
+                if key == ord('w'):
+                    self.key_press('w')
+                elif key == ord('a'):
+                    self.key_press('a')
+                elif key == ord('s'):
+                    self.key_press('s')
+                elif key == ord('d'):
+                    self.key_press('d')
+                elif key == ord('r'):
+                    self.key_press('r')
+                elif key == ord('q'):
+                    break
                 if self.check_win():
-                    print("Congratulations! You have reached the top of the wall! You win!")
+                    stdscr.addstr(self.wall.height + 3, 0, "Congratulations! You have reached the top!")
+                    stdscr.refresh()
+                    curses.napms(2000)
                     break
                 if self.check_game_over():
-                    print("Game Over! You have run out of energy.")
+                    stdscr.addstr(self.wall.height + 3, 0, "Game Over! You have run out of energy.")
+                    stdscr.refresh()
+                    curses.napms(2000)
                     break
-        except KeyboardInterrupt:
-            print("\nGame exited.")
+        curses.wrapper(main)
+
 class Wall:
     def __init__(self):
         self.height = 10
         self.width = 10
         self.holds = self.generate_wall()
     def generate_wall(self):
-        holds = []
+        holds = [[False for _ in range(self.width)] for _ in range(self.height)]
+        row, column = 0, 0
+        holds[row][column] = True
+
+        while row < self.height - 1:
+            if column < self.width - 1 and random.random() < 0.5:
+                column += 1
+            else:
+                row += 1
+            holds[row][column] = True
         for i in range(self.height):
-            row = []
             for j in range(self.width):
-                if random.random() < 0.4:
-                    row.append(True)
-                else:
-                    row.append(False)
-            holds.append(row)
+                if random.random() < 0.3:
+                    holds[i][j] = True
         return holds
     def is_move_valid(self, player):
         if 0 <= player.row < self.height and 0 <= player.column < self.width:
