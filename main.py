@@ -1,4 +1,5 @@
 import random
+import curses
 
 class Player:
     def __init__(self, start_row, start_column):
