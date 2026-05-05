@@ -1,3 +1,5 @@
+import random
+
 class Player:
     def __init__(self, start_row, start_column):
         self.row = start_row
@@ -22,24 +24,46 @@ class Game:
     def __init__(self):
         self.wall = Wall()
         self.player = Player(0, 0)
+        self.wall.holds[0][0] = True
+        self.wall.holds[0][1] = True
+        self.wall.holds[1][0] = True
     def key_press(self, key):
         if key in ["w", "a", "s", "d"]:
+            old_row = self.player.row
+            old_column = self.player.column
             self.player.move_player(key)
+            if self.wall.is_move_valid(self.player):
+                self.player.get_energy(resting = False)
+            else:
+                print("Invalid move! No hold there.")
+                self.player.row = old_row
+                self.player.column = old_column
+                self.player.get_energy(resting = False)
+        elif key == "r":
+            self.player.get_energy(resting = True)
+            print("You rest and gain energy")
+        else:
+            print("Invalid Input. Please enter w/a/s/d to move or r to rest.")
+
     def check_win(self):
         return self.player.row == self.wall.height - 1
     def check_game_over(self):
         return self.player.energy <= 0
     def game_loop(self):
-        while True:
-            self.wall.display_wall(self.player)
-            key = input("Enter a move (w/a/s/d): ")
-            self.key_press(key)
-            if self.check_win():
-                print("Congratulations! You have reached the top of the wall! You win!")
-                break
-            if self.check_game_over():
-                print("Game Over! You have run out of energy.")
-                break
+        try:
+            while True:
+                self.wall.display_wall(self.player)
+                print(f"Energy: {self.player.energy}")
+                key = input("Enter a move (w/a/s/d) or r to rest:")
+                self.key_press(key)
+                if self.check_win():
+                    print("Congratulations! You have reached the top of the wall! You win!")
+                    break
+                if self.check_game_over():
+                    print("Game Over! You have run out of energy.")
+                    break
+        except KeyboardInterrupt:
+            print("\nGame exited.")
 class Wall:
     def __init__(self):
         self.height = 10
@@ -50,7 +74,7 @@ class Wall:
         for i in range(self.height):
             row = []
             for j in range(self.width):
-                if (i + j) % 3 == 0:
+                if random.random() < 0.4:
                     row.append(True)
                 else:
                     row.append(False)
