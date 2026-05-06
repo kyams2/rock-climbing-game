@@ -24,10 +24,8 @@ class Player:
 class Game:
     def __init__(self):
         self.wall = Wall()
-        self.player = Player(0, 0)
-        self.wall.holds[0][0] = True
-        self.wall.holds[0][1] = True
-        self.wall.holds[1][0] = True
+        self.player = Player(self.wall.height - 1, 0)
+        self.wall.holds[self.wall.height - 1][0] = True
         self.message = ""
     def key_press(self, key):
         if key in ["w", "a", "s", "d"]:
@@ -49,7 +47,7 @@ class Game:
             self.message = "Invalid input."
 
     def check_win(self):
-        return self.player.row == self.wall.height - 1
+        return self.player.row == 0
     def check_game_over(self):
         return self.player.energy <= 0
     def game_loop(self):
@@ -105,14 +103,14 @@ class Wall:
         self.holds = self.generate_wall()
     def generate_wall(self):
         holds = [[False for _ in range(self.width)] for _ in range(self.height)]
-        row, column = 0, 0
+        row, column = self.height - 1, 0
         holds[row][column] = True
 
-        while row < self.height - 1:
+        while row > 0:
             if column < self.width - 1 and random.random() < 0.5:
                 column += 1
             else:
-                row += 1
+                row -= 1
             holds[row][column] = True
         for i in range(self.height):
             for j in range(self.width):
