@@ -39,7 +39,7 @@ class Game:
         self.player.row = self.wall.height - 1
         self.player.column = 0
         self.wall.holds[self.player.row][self.player.column] = 1
-        self.player.energy += 5
+        self.player.energy = 15 + self.level * 2
         self.rests_left = 3
         self.discovered.clear()
         self.message = f"Welcome to Level {self.level}!"
@@ -55,7 +55,7 @@ class Game:
                 if tile == 1:
                     self.message = ""
                 elif tile == 2:
-                    self.player.energy -= 2
+                    self.player.energy -= 1
                     self.message = "Bad Hold!"
                 elif tile == 3:
                     self.player.energy += 2
@@ -151,7 +151,7 @@ class Wall:
     def generate_wall(self):
         holds = [[0 for _ in range(self.width)] for _ in range(self.height)]
         row, column = self.height - 1, 0
-        holds[row][column] = True
+        holds[row][column] = 1
         
         while row > 0:
             if column < self.width - 1 and random.random() < 0.5:
