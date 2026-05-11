@@ -58,7 +58,7 @@ class Game:
                     self.player.energy -= 1
                     self.message = "Bad Hold!"
                 elif tile == 3:
-                    self.player.energy += 2
+                    self.player.energy += 3
                     self.message = "Rest Hold!"
             else:
                 self.player.row = old_row
