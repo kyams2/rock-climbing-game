@@ -77,6 +77,7 @@ class Game:
         return self.player.energy <= 0
     def game_loop(self):
         def main(stdscr):
+            max_y, max_x = stdscr.getmaxyx()
             curses.curs_set(0)
             stdscr.nodelay(True)
             while True:
@@ -99,15 +100,19 @@ class Game:
                                     row += "R "
                             else:
                                 row += "O "
-                    stdscr.addstr(i, 0, row)
-                stdscr.addstr(self.wall.height + 1, 0, f"Energy: {self.player.energy}")
-                stdscr.addstr(self.wall.height + 2, 0, f"Rests left: {self.rests_left}")
-                stdscr.addstr(self.wall.height + 3, 0, self.message)
-
+                    if i < max_y:
+                        stdscr.addstr(i, 0, row[:max_x - 1])
                 elapsed_time = int(time.time() - self.start_time)
                 minutes = elapsed_time // 60
                 seconds = elapsed_time % 60
-                stdscr.addstr(self.wall.height + 4, 0, f"Time: {minutes:02}:{seconds:02}")
+                if self.wall.height + 1 < max_y:
+                    stdscr.addstr(self.wall.height + 1, 0, f"Energy: {self.player.energy}" [:max_x - 1])
+                if self.wall.height + 2 < max_y:
+                    stdscr.addstr(self.wall.height + 2, 0, f"Rests Left: {self.rests_left}" [:max_x - 1])
+                if self.wall.height + 3 < max_y:
+                    stdscr.addstr(self.wall.height + 3, 0, self.message[:max_x - 1])
+                if self.wall.height + 4 < max_y:
+                    stdscr.addstr(self.wall.height + 4, 0, f"Time: {minutes:02}:{seconds:02}"[:max_x - 1])
 
                 stdscr.refresh()
                 time.sleep(0.05)
@@ -158,7 +163,7 @@ class Wall:
                 column += 1
             else:
                 row -= 1
-            holds[row][column] = True
+            holds[row][column] = 1
         bad_hold_chance = min(0.15 + self.difficulty * 0.02, 0.40)
         rest_hold_chance = max(0.10 - self.difficulty * 0.01, 0.05)
         normal_hold_chance = 0.35
