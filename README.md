@@ -8,13 +8,13 @@ This program would generally be used for fun! By taking a character and being ab
 
 # Specific Outline of Code
 
-## The classes and methods that will be used to create this project are:
+## The classes and methods/functions that will be used to create this project are:
 
-The Player class: Contains def move_player() and def get_energy()
+The Player class: def __init__, def move_player(), def get_energy()
 
-The Wall class: def generate_wall(), def is_move_valid(), and def display_wall()
+The Game class: def __init__, def next_level, def key_press(), def check_win(), def check_game_over(), def game_loop()
 
-The Game class: def key_press(), def check_win(), def check_game_over(), def game_loop()
+The Wall class: def __init__, def generate_wall(), def is_move_valid(), def display_wall()
 
 
 ## The functions (and descriptions) that will be used to create this project are:
