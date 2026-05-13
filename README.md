@@ -10,6 +10,16 @@ I have been a competitive rock climber for almost ten years so this project was 
    
 This program would generally be used for fun! By taking a character and being able to move it left, right, up, and down for a possibility of winning, the player can create a fun time on their own or with friends. It is an easy way to pass the time quickly without much effort. It will give a little bit of insight of the rock climbing world to the player and introduce the basic concepts of this sport.
 
+# Installation on Computer
+
+1) Navigate to the kya_project.py page in my github repository.
+
+2) In the upper right-hand corner of the page, download the raw file of the code.
+
+3) This should automatically place the file into your Downloads section on MAC or a similar section on PC.
+
+4) Open your terminal on the computer you are using and navigate to the location that the file downloaded to using a series of cd commands and then run the page using the uv run python command. EX. cd Downloads/uv run python kya_project.py
+
 # Specific Outline of Code
 
 ## The classes and methods/functions that will be used to create this project are:
