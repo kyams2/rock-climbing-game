@@ -2,9 +2,13 @@
 
 The overall idea of the project is that there is a rock climbing wall with many rock climbing holds. There is a character (represented by the letter "P" in the terminal) in the simulation that a player controls. The player's objective is to get the character from the bottom of a rock climbing wall to the top of the rock climbing wall despite the obstacles. They use the computer keys ("w" "a" "s" "d") to move the character up, but as the character continues to move, it loses energy, so the player has to manage its energy wisely and strategically find the simplest way up the wall. If the character loses all of its energy before it reaches the top, the game is over.
 
+# Context
+
+I have been a competitive rock climber for almost ten years so this project was inspired by my passion for climbing. In rock climbing, the goal is to get to the top of the wall with the least amount of tries/falls as possible. It is crucial to find resting positions on the wall to conserve and maximize your energy to make it to the top. Finding the most strategic and energy conserving way to get to the top, without knowing exactly which holds are the best to rest on, is another very important skill to master for success.
+
 # Program Use
    
-This program would generally be used for fun! By taking a character and being able to move it left, right, up, and down for a possibility of    winning, the player can create a fun time on their own or with friends. It is an easy way to pass the time quickly without the effort of doing a task with much work.
+This program would generally be used for fun! By taking a character and being able to move it left, right, up, and down for a possibility of winning, the player can create a fun time on their own or with friends. It is an easy way to pass the time quickly without much effort. It will give a little bit of insight of the rock climbing world to the player and introduce the basic concepts of this sport.
 
 # Specific Outline of Code
 
