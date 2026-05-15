@@ -19,7 +19,7 @@ class Player:
             self.column += 1
     def get_energy(self, resting):
         if resting:
-            self.energy += 4 #gain energy
+            self.energy += 2 #gain energy
         else:
             self.energy -= 1 #lose energy
 
@@ -66,7 +66,7 @@ class Game:
                 self.message = "Invalid move!"
         elif key == "r":
             if self.rests_left > 0:
-                self.player.energy += 2
+                self.player.energy += 4
                 self.rests_left -= 1
                 self.message = f"You rest and gain energy! Rests left: {self.rests_left}"
             else:
