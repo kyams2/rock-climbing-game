@@ -12,7 +12,7 @@ I have been a competitive rock climber for almost ten years so this project was 
 
 # Program Use
    
-This program would generally be used for fun! By taking a character and being able to move it left, right, up, and down for a possibility of winning, the player can create a fun time on their own or with friends. It is an easy way to pass the time quickly without much effort. It will give a little bit of insight of the rock climbing world to the player and introduce the basic concepts of this sport.
+This program would generally be used for fun! By taking a character and being able to move it left, right, up, and down for a possibility of winning, the player can create a fun time on their own or with friends. It is an easy way to pass the time quickly without much effort. It will give a bit of insight into the rock climbing world and introduce the basic concepts of this sport.
 
 # Installation
 
