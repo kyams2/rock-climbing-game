@@ -83,12 +83,16 @@ class Game:
             stdscr.nodelay(True)
             while True:
                 max_y, max_x = stdscr.getmaxyx()
-                self.max.height = max_y - 6
-                self.max.width = (max_x // 2) - 2
+                self.max_height = max_y - 6
+                self.max_width = (max_x // 2) - 2
                 required_height = self.wall.height + 6
                 required_width = self.wall.width * 2 + 1
                 if max_y < required_height or max_x < required_width:
                     stdscr.clear()
+                    stdscr.addstr(0, 0, "Terminal too small! Please resize!")
+                    stdscr.refresh()
+                    time.sleep(0.5)
+                    continue
                 for i in range(self.wall.height):
                     row = ""
                     for j in range(self.wall.width):
@@ -153,7 +157,6 @@ class Game:
                     stdscr.refresh()
                     curses.napms(2000)
                     break
-                curses.wrapper(main)
 
 class Wall:
     def __init__(self, height = 10, width = 10, difficulty = 1):
