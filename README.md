@@ -43,6 +43,25 @@ The "a" key moves the character to the left.
 
 The "d" key moves the character to the right. 
 
+# UNIT TEST 1 NARRATIVE OF CURRENT CODE (NO INPUT DATA)
+
+Currently, have completed the coding for the first class out of three. This is the Player class.
+This class has two functions with it (excluding def __init__):
+
+The def move_player function has set each key in "w, a, s, d" to a specific direction that the character would be moving in. 
+"w" makes the character move up, "s" is down, "a" is left, and "d" is right. After defining the letter to the general direction, it is crucial to assign which specific direction it will me moving. Underneath each "if" or "elif" statement, this is where I assigned each specific direction with "self.row" or "self.column" and it should check out.
+
+The get_energy function is coded for the character to receive or lose energy. "if" the character is resting/stopped, 
+it will gain two energy points but if the character is moving/not resting, the character will lose one energy point.
+
+# UNIT TEST 2 NARRATIVE OF CURRENT CODE
+
+In this stage of the project, I have completed most of the code. When run, the code outputted something very similar to my overall end goal of the project. When I push the "w", "a", "s", "d" keys, the character moves up and down the wall like it is supposed to. The wall is also generated with all of the holds in a grid like pattern, and the congratulatory words are printed when the player wins at the end of the game. There are a few problems that I am currently working on: The entire wall prints in the terminal again every time the player makes the character move, the player actually moves down the wall instead of up the wall and finished at the bottom, and the obstacles, such as the loss of points, seem to not be an issue when playing the game which makes it way too easy to accomplish the goal.
+
+# UNIT TEST 3 NARRATIVE OF CURRENT CODE
+
+In this stage of the project, I have completed my entire code and have a running and working game. The game is continuing as expected and there are no huge errors preventing it from happening. I have fixed the wall problem in the sense that the wall does not print every time the player wants to move the character, it just prints once and then stays on the screen until the player loses. I have fixed the issue of the player moving down on the grid in the terminal and now the player moves the character up. I have also made the game a bit more competitive in the sense that the player actually has to strategically use their rests to get to the top and not run out of energy too quickly. The final thing that I have to fix is that, when run, the game automatically quits after level four due to the increase in holds on the wall so I have to fix that in order for my game to run properly.
+
 # Extras!
 
 ## Specific Outline of Code
