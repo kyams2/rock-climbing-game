@@ -1,6 +1,6 @@
 # What is Rock Climbing?
 
-Rock climbing is a physically intensive sport that required mental and physical stamina. The goal is to attempt moves in order to get from the bottom of the rock wall to the top. In competing, the goal is to do this with the least amount of attempts. The strategic methods of finding rest holds to regain energy and conserve it, is crucial to get to the top of the wall.
+Rock climbing is a physically intensive sport that requires mental and physical stamina. The goal is to attempt moves in order to get from the bottom of the rock wall to the top. In competing, the goal is to do this with the least amount of attempts. The strategic methods of finding rest holds to regain energy and conserve it, is crucial to get to the top of the wall.
 
 # Description of Project
 
