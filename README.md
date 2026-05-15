@@ -60,7 +60,7 @@ The Wall class: def __init__, def generate_wall(), def is_move_valid(), def disp
 
 def move_player(): This function allows the player to move around the rock climbing wall and on to the rock climbing holds if available.
 
-def get_energy(): This function is responsible for the energy that the player will recieve and the energy that the play might lose. It controls how the energy cahnges each move.
+def get_energy(): This function is responsible for the energy that the player will recieve and the energy that the play might lose. It controls how the energy changes each move.
 
 def next_level(): This function is responsible for generating the next level of the game if the player has won the previous level.
 
@@ -74,7 +74,7 @@ def is_move_valid(): This function checks to see if the move being conducted is 
 
 def check_win(): This function checks to see if the play has reached the top and has won.
 
-def check_game_over(): This function is the overall ending of the game if the charachter dies. This code will check to see if the player has run out of energy and, if so, the game is over.
+def check_game_over(): This function is the overall ending of the game if the character dies. This code will check to see if the player has run out of energy and, if so, the game is over.
 
 def game_loop(): This function controls the entire game flow and call all of the function in the correct order.
 
