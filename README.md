@@ -21,7 +21,7 @@ I have been a competitive rock climber for almost ten years so this project was 
 
 # Testing/Code Running
 
-(This game is run in the terminal so no installation, other than python, is needed)
+(This game is run in the terminal so no installation, other than python, is needed. If on Windows, install the curses package that is not currently installed using this in the terminal: pip install windows-curses)
 
 1) Navigate to the kya_project.py page in my github repository.
 
