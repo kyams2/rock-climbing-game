@@ -88,7 +88,7 @@ class Game:
                 required_height = self.wall.height + 6
                 required_width = self.wall.width * 2 + 1
                 if max_y < required_height or max_x < required_width:
-                stdscr.clear()
+                    stdscr.clear()
                 for i in range(self.wall.height):
                     row = ""
                     for j in range(self.wall.width):
