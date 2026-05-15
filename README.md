@@ -78,14 +78,13 @@ def check_game_over(): This function is the overall ending of the game if the ch
 
 def game_loop(): This function controls the entire game flow and call all of the function in the correct order.
 
-## Notes
-
-This game does not take any inputted data, other than pressing keys to move the character. The code would take into account which keys would correlate to moving the character left, right, up, and down but there is no typed data from the player.
-
 ## Program Use
    
 This program would generally be used for fun! By taking a character and being able to move it left, right, up, and down for a possibility of winning, the player can create a fun time on their own or with friends. It is an easy way to pass the time quickly without much effort. It will give a bit of insight into the rock climbing world and introduce the basic concepts of this sport.
 
+## Notes
+
+This game does not take any inputted data, other than pressing keys to move the character. The code would take into account which keys would correlate to moving the character left, right, up, and down but there is no typed data from the player.
 
 
 
