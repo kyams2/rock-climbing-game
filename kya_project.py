@@ -35,7 +35,9 @@ class Game:
         self.level = 1
     def next_level(self):
         self.level += 1
-        self.wall = Wall(height = min(10 + self.level * 2, 30), width = min(10 + self.level, 30), difficulty = self.level)
+        height = min(10 + self.level * 2, self.max_height)
+        width = min(10 + self.level, self.max_width)
+        self.wall = Wall(height = height, width = width, difficulty = self.level)
         self.player.row = self.wall.height - 1
         self.player.column = 0
         self.wall.holds[self.player.row][self.player.column] = 1
@@ -77,10 +79,15 @@ class Game:
         return self.player.energy <= 0
     def game_loop(self):
         def main(stdscr):
-            max_y, max_x = stdscr.getmaxyx()
             curses.curs_set(0)
             stdscr.nodelay(True)
             while True:
+                max_y, max_x = stdscr.getmaxyx()
+                self.max.height = max_y - 6
+                self.max.width = (max_x // 2) - 2
+                required_height = self.wall.height + 6
+                required_width = self.wall.width * 2 + 1
+                if max_y < required_height or max_x < required_width:
                 stdscr.clear()
                 for i in range(self.wall.height):
                     row = ""
@@ -100,19 +107,20 @@ class Game:
                                     row += "R "
                             else:
                                 row += "O "
-                    if i < max_y:
+                    try:
                         stdscr.addstr(i, 0, row[:max_x - 1])
+                    except curses.error:
+                        pass
                 elapsed_time = int(time.time() - self.start_time)
                 minutes = elapsed_time // 60
                 seconds = elapsed_time % 60
-                if self.wall.height + 1 < max_y:
-                    stdscr.addstr(self.wall.height + 1, 0, f"Energy: {self.player.energy}" [:max_x - 1])
-                if self.wall.height + 2 < max_y:
-                    stdscr.addstr(self.wall.height + 2, 0, f"Rests Left: {self.rests_left}" [:max_x - 1])
-                if self.wall.height + 3 < max_y:
-                    stdscr.addstr(self.wall.height + 3, 0, self.message[:max_x - 1])
-                if self.wall.height + 4 < max_y:
-                    stdscr.addstr(self.wall.height + 4, 0, f"Time: {minutes:02}:{seconds:02}"[:max_x - 1])
+                try:
+                    stdscr.addstr(self.wall.height + 1, 0, f"Energy: {self.player.energy}")
+                    stdscr.addstr(self.wall.height + 2, 0, f"Rests Left: {self.rests_left}")
+                    stdscr.addstr(self.wall.height + 3, 0, self.message)
+                    stdscr.addstr(self.wall.height + 4, 0, f"Time: {minutes:02}:{seconds:02}")
+                except curses.error:
+                    pass
 
                 stdscr.refresh()
                 time.sleep(0.05)
@@ -145,7 +153,7 @@ class Game:
                     stdscr.refresh()
                     curses.napms(2000)
                     break
-        curses.wrapper(main)
+                curses.wrapper(main)
 
 class Wall:
     def __init__(self, height = 10, width = 10, difficulty = 1):
