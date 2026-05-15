@@ -2,7 +2,7 @@
 
 Rock climbing is a physically intensive sport that requires mental and physical stamina. The goal is to attempt moves in order to get from the bottom of the rock wall to the top. In competing, the goal is to do this with the least amount of attempts. The strategic methods of finding rest holds to regain energy and conserve it, is crucial to get to the top of the wall.
 
-# Demo
+# Demo (kya_project.py)
 When the code is run:
 
 + A grid like wall appears which is the area that the character will be climbing on.
