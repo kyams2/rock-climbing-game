@@ -1,3 +1,7 @@
+# What is Rock Climbing?
+
+Rock climbing is a physically intensive sport that required mental and physical stamina. The goal is to attempt moves in order to get from the bottom of the rock wall to the top. If competing, the goal is to do this with the least amount of attempts. The strategic methods if finding rest holds to regain energy and conserve it, is crucial to get to the top of the wall.
+
 # Description of Project
 
 The overall idea of the project is that there is a rock climbing wall with many rock climbing holds. There is a character (represented by the letter "P" in the terminal) in the simulation that a player controls. The player's objective is to get the character from the bottom of a rock climbing wall to the top of the rock climbing wall despite the obstacles. They use the computer keys ("w" "a" "s" "d") to move the character up, but as the character continues to move, it loses energy, so the player has to manage its energy wisely and strategically find the simplest way up the wall. If the character loses all of its energy before it reaches the top, the game is over.
