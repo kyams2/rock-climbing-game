@@ -10,7 +10,9 @@ The overall idea of the project is that there is a rock climbing wall with many 
 
 I have been a competitive rock climber for almost ten years so this project was inspired by my passion for climbing. In rock climbing, the goal is to get to the top of the wall with the least amount of tries/falls as possible. Although a competitive climber, my project is based on the ideals of outdoor climbing on high mountains. Each section of a tall climb is called a "pitch", so each level would equate to a particular pitch of the climb. As the climb gets higher, the pitches might get harder. It is crucial to find resting positions on the wall to conserve and maximize your energy to make it to the top. Finding the most strategic and energy conserving way to get to the top, without knowing exactly which holds are the best to rest on, is another very important skill to master for success.
 
-# Installation
+# Testing
+
+(This game is run in the terminal so no installation, other than python, is needed)
 
 1) Navigate to the kya_project.py page in my github repository.
 
