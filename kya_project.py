@@ -19,7 +19,7 @@ class Player:
             self.column += 1
     def get_energy(self, resting):
         if resting:
-            self.energy += 2 #gain energy
+            self.energy += 4 #gain energy
         else:
             self.energy -= 1 #lose energy
 
