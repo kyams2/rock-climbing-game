@@ -1,20 +1,20 @@
 # What is Rock Climbing?
 
-Rock climbing is a physically intensive sport that required mental and physical stamina. The goal is to attempt moves in order to get from the bottom of the rock wall to the top. If competing, the goal is to do this with the least amount of attempts. The strategic methods if finding rest holds to regain energy and conserve it, is crucial to get to the top of the wall.
+Rock climbing is a physically intensive sport that required mental and physical stamina. The goal is to attempt moves in order to get from the bottom of the rock wall to the top. In competing, the goal is to do this with the least amount of attempts. The strategic methods of finding rest holds to regain energy and conserve it, is crucial to get to the top of the wall.
 
 # Description of Project
 
 The overall idea of the project is that there is a rock climbing wall with many rock climbing holds. There is a character (represented by the letter "P" in the terminal) in the simulation that a player controls. The player's objective is to get the character from the bottom of a rock climbing wall to the top of the rock climbing wall despite the obstacles. They use the computer keys ("w" "a" "s" "d") to move the character up, but as the character continues to move, it loses energy, so the player has to manage its energy wisely and strategically find the simplest way up the wall. If the character loses all of its energy before it reaches the top, the game is over.
 
-# Context
+# Context and Inspiration
 
-I have been a competitive rock climber for almost ten years so this project was inspired by my passion for climbing. In rock climbing, the goal is to get to the top of the wall with the least amount of tries/falls as possible. It is crucial to find resting positions on the wall to conserve and maximize your energy to make it to the top. Finding the most strategic and energy conserving way to get to the top, without knowing exactly which holds are the best to rest on, is another very important skill to master for success.
+I have been a competitive rock climber for almost ten years so this project was inspired by my passion for climbing. In rock climbing, the goal is to get to the top of the wall with the least amount of tries/falls as possible. Although a competitive climber, my project is based on the ideals of outdoor climbing on high mountains. Each section of a tall climb is called a "pitch", so each level would equate to a particular pitch of the climb. As the climb gets higher, the pitches might get harder. It is crucial to find resting positions on the wall to conserve and maximize your energy to make it to the top. Finding the most strategic and energy conserving way to get to the top, without knowing exactly which holds are the best to rest on, is another very important skill to master for success.
 
 # Program Use
    
 This program would generally be used for fun! By taking a character and being able to move it left, right, up, and down for a possibility of winning, the player can create a fun time on their own or with friends. It is an easy way to pass the time quickly without much effort. It will give a little bit of insight of the rock climbing world to the player and introduce the basic concepts of this sport.
 
-# Installation on Computer
+# Installation
 
 1) Navigate to the kya_project.py page in my github repository.
 
