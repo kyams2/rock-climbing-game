@@ -81,11 +81,11 @@ class Game:
         return self.player.energy <= 0
     def game_loop(self):
         def main(stdscr):
-            stdscr.clear()
             stdscr.refresh()
             curses.curs_set(0)
             stdscr.nodelay(True)
             while True:
+                stdscr.clear()
                 max_y, max_x = stdscr.getmaxyx()
                 self.max_height = max_y - 6
                 self.max_width = (max_x // 2) - 2
