@@ -1,5 +1,5 @@
 import random
-import curses # AI assistance to understand the curses library
+import curses # ChatGPT assistance to understand the curses library
 import time
 MAX_LEVEL = 10
 
